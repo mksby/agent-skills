@@ -16,6 +16,8 @@ React and Next.js performance optimization guidelines from Vercel Engineering. C
 - Reviewing code for performance issues
 - Optimizing bundle size or load times
 
+**Dependency aware:** Rules that reference external libraries (swr, lru-cache, lucide-react, etc.) include vanilla alternatives. The agent checks your `package.json` before suggesting code.
+
 **Categories covered:**
 - Eliminating waterfalls (Critical)
 - Bundle size optimization (Critical)

@@ -20,6 +20,28 @@ Reference these guidelines when:
 - Refactoring existing React/Next.js code
 - Optimizing bundle size or load times
 
+## Dependency Awareness
+
+**IMPORTANT:** Before suggesting code that uses external libraries, ALWAYS:
+
+1. Check the project's `package.json` for existing dependencies
+2. If the required library is NOT installed, you MUST either:
+   - Offer to install it with the install command
+   - Provide an alternative using existing project dependencies
+   - Provide a vanilla JS/React solution
+
+**Rules with optional dependencies:**
+
+| Rule | Library | Alternatives |
+|------|---------|--------------|
+| `client-swr-dedup` | `swr` | `@tanstack/react-query`, custom hook with Map cache |
+| `server-cache-lru` | `lru-cache` | custom Map-based cache with TTL |
+| `async-dependencies` | `better-all` | manual Promise chaining |
+| `bundle-barrel-imports` | `lucide-react` | `@heroicons/react`, inline SVG |
+| `bundle-barrel-imports` | `@mui/material` | `@radix-ui`, native HTML + CSS |
+
+**Never assume a library is installed.** Always verify first.
+
 ## Rule Categories by Priority
 
 | Priority | Category | Impact | Prefix |

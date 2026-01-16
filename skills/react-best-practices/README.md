@@ -61,6 +61,7 @@ title: Rule Title Here
 impact: MEDIUM
 impactDescription: Optional description
 tags: tag1, tag2, tag3
+requires: package-name | alternative | none
 ---
 
 ## Rule Title Here
@@ -73,15 +74,39 @@ Brief explanation of the rule and why it matters.
 // Bad code example
 ```
 
-**Correct (description of what's right):**
+---
 
-```typescript
-// Good code example
+### Option 1: Using `package-name` (recommended)
+
+```bash
+npm install package-name
 ```
 
-Optional explanatory text after examples.
+```typescript
+// Good code example with the package
+```
+
+---
+
+### Option 2: Vanilla TypeScript (no dependencies)
+
+```typescript
+// Good code example without external dependencies
+```
+
+---
+
+### When to use which
+
+| Scenario | Recommendation |
+|----------|----------------|
+| Scenario A | Use the package |
+| Scenario B | Use vanilla approach |
 
 Reference: [Link](https://example.com)
+```
+
+**Note:** The `requires` field and multi-option structure are only needed for rules that reference external libraries. Simple rules without dependencies can use the basic correct/incorrect format
 
 ## File Naming Convention
 
